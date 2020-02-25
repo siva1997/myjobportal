@@ -17,18 +17,18 @@
 			</div>
 			<div>
 				<h3>LOGIN</h3>
-				<select  id="signin">
-					<option  onclick="myLoginFunction()" value="hrlogin.jsp">HR</option>
-					<option onclick="myLoginFunction()" value="jobseekerlogin.jsp">JobSeeker</option>
+				<select onchange="myLoginFunction()" id="signin">
+					<option value="" index="-1">Select</option>
+					<option value="hrlogin.jsp">HR</option>
+					<option value="jobseekerlogin.jsp">JobSeeker</option>
 				</select>
 			</div>
 				<div>
 				<h3>REGISTER</h3>
-				<select id="signup">
-					<option onclick="myRegistrationFunction()"
-						value="hrregistration.jsp">HR</option>
-					<option onclick="myRegistrationFunction()"
-						value="jobseekerregistration.jsp">JobSeeker</option>
+				<select onchange="myRegistrationFunction()" id="signup">
+				<option value="" index="-1">Select</option>
+					<option value="hrregistration.jsp">HR</option>
+					<option value="jobseekerregistration.jsp">JobSeeker</option>
 				</select>
 			</div>
 		</div>
