@@ -14,7 +14,7 @@
     <div id="title">
         <h2>JobSeeker REGISTRATION</h2>
     </div>
-    <form action="">
+    <form action="jobseekerregistration" method="post">
      
             <table>
                 <tr>
@@ -48,6 +48,7 @@
                     title="Must contain at least one number and one uppercase and lowercase letter,
                      and at least 8 or more characters" required></td>
                 </tr>
+                
                 <tr>
                     <td></td>
                     <td><input type="submit" value="register"></td>

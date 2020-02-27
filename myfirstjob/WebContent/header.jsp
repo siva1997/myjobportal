@@ -15,23 +15,21 @@
 			<div id="home">
 				<a href="index.jsp"><button>HOME</button></a>
 			</div>
-			<div>
-				<h3>LOGIN</h3>
-				<select onchange="myLoginFunction()" id="signin">
-					<option value="" index="-1">Select</option>
-					<option value="hrlogin.jsp">HR</option>
-					<option value="jobseekerlogin.jsp">JobSeeker</option>
-				</select>
+			<div class="dropdown" >
+				<button class="dropbtn">LOGIN</button>
+				<div class="dropdown-content" >
+					<a href="hrlogin.jsp">HR LOGIN</a>
+					<a href="jobseekerlogin.jsp">JOBSEEKER LOGIN</a>
+				</div>
 			</div>
-				<div>
-				<h3>REGISTER</h3>
-				<select onchange="myRegistrationFunction()" id="signup">
-				<option value="" index="-1">Select</option>
-					<option value="hrregistration.jsp">HR</option>
-					<option value="jobseekerregistration.jsp">JobSeeker</option>
-				</select>
+				<div class="dropdown" >
+				<button class="dropbtn">REGISTRATION</button>
+				<div class="dropdown-content" >
+					<a href="hrregistration.jsp">HR REGISTRATION</a>
+					<a href="jobseekerregistration.jsp">JOBSEEKER REGISTRATION</a>
+				</div>
 			</div>
-		</div>
+			</div>
 	</header>
 </body>
 </html>

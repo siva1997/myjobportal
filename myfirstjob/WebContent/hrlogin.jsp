@@ -13,7 +13,7 @@
     <div id="title">
         <h2>HR LOGIN</h2>
     </div>
-    <form action="" id="hrlogin" onsubmit="return hrLoginData()" >
+    <form action="hrlogin" method="post" id="hrlogin" >
       
             <table>
                 <tr>
@@ -33,7 +33,6 @@
              </form>
         </center>
    
-     <script src='main.js'></script>
 </body>
 
 </html>

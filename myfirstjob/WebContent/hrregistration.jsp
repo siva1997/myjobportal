@@ -13,7 +13,7 @@
     <div id="title">
         <h2>HR REGISTRATION</h2>
     </div>
-    <form action="">
+    <form action="hrregistration" method="post">
         
             <table>
                 <tr>
@@ -47,6 +47,7 @@
                     title="Must contain at least one number and one uppercase and lowercase letter,
                      and at least 8 or more characters" required></td>
                 </tr>
+                
                 <tr>
                     <td></td>
                     <td><input type="submit" value="register"></td>
