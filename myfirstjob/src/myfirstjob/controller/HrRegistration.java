@@ -1,6 +1,7 @@
 package myfirstjob.controller;
 
 import java.io.IOException;
+
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -42,7 +43,7 @@ public class HrRegistration extends HttpServlet {
 			}
 			else {
 				request.setAttribute("sqlError", "some internal error occured try after some time");
-				request.getRequestDispatcher("hrregisttration.jsp").forward(request, response);
+				request.getRequestDispatcher("hrregistration.jsp").forward(request, response);
 			}
 		}
 	}

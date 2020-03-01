@@ -35,8 +35,7 @@ public class HrLogin extends HttpServlet {
 			if(hrUser!=null) {
 				HttpSession session=request.getSession();
 				session.setAttribute("hrUser", hrUser);
-				response.getWriter().print("hr login sucessful");
-//				response.sendRedirect("");
+				response.sendRedirect("jobsposted");
 			}
 			else {
 				request.setAttribute("loginError", "enter valid credentials");

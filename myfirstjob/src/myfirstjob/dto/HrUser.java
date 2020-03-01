@@ -1,10 +1,13 @@
 package myfirstjob.dto;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class HrUser {
@@ -30,14 +33,20 @@ public class HrUser {
 	@Column(nullable = false)
 	private String confirmPassword;
 	
+	@OneToMany(mappedBy ="hrUser")
+	private List<Job> jobsList;
+	
 	
 	public HrUser() {
 		super();
 	}
 
 
+	
+
+
 	public HrUser(int id, String organisation, String userName, String email, String mobileNumber, String password,
-			String confirmPassword) {
+			String confirmPassword, List<Job> jobsList) {
 		super();
 		this.id = id;
 		Organisation = organisation;
@@ -46,7 +55,11 @@ public class HrUser {
 		this.mobileNumber = mobileNumber;
 		this.password = password;
 		this.confirmPassword = confirmPassword;
+		this.jobsList = jobsList;
 	}
+
+
+
 
 
 	public int getId() {
@@ -116,6 +129,15 @@ public class HrUser {
 
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;
+	}
+
+
+	public List<Job> getJobsList() {
+		return jobsList;
+	}
+
+	public void setJobsList(List<Job> jobsList) {
+		this.jobsList = jobsList;
 	}
 
 

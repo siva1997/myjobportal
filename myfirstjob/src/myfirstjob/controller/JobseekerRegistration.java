@@ -43,7 +43,7 @@ public class JobseekerRegistration extends HttpServlet {
 			}
 			else {
 				request.setAttribute("sqlError", "some internal error occured try after some time");
-				request.getRequestDispatcher("jobseekerregisttration.jsp").forward(request, response);
+				request.getRequestDispatcher("jobseekerregistration.jsp").forward(request, response);
 			}
 		}
 	}

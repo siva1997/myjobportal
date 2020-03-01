@@ -8,6 +8,7 @@
 	<persistence-unit name="jobportal">
 	<class>myfirstjob.dto.HrUser</class>
 	<class>myfirstjob.dto.JobseekerUser</class>
+	<class>myfirstjob.dto.Job</class>
 	<properties>
 	<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.cj.jdbc.Driver" />
@@ -19,7 +20,7 @@
 
 			<property
 				name="javax.persistence.schema-generation.database.action"
-				value="create" />
+				value="none" />
 
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQL57InnoDBDialect" />
