@@ -9,6 +9,8 @@
 	<class>myfirstjob.dto.HrUser</class>
 	<class>myfirstjob.dto.JobseekerUser</class>
 	<class>myfirstjob.dto.Job</class>
+	<class>myfirstjob.dto.ApplyDetails</class>
+	<class>myfirstjob.dto.JobSeekerProfile</class>
 	<properties>
 	<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.cj.jdbc.Driver" />

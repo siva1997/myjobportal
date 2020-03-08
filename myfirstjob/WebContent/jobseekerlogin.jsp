@@ -16,12 +16,13 @@
 		</div>
 		<form action="jobseekerlogin" method="post">
 			${sqlError}
+			${loginError }
 			<table>
 
 				<tr>
 					<td><label>Email</label></td>
 					<td><input type="email" name="email" required></td>
-					<td>${errorMessagges.email }</td>
+					<td>${errorMessages.emailError}</td>
 				</tr>
 				<tr>
 					<td><label>Password</label></td>
@@ -30,7 +31,7 @@
 						title="Must contain at least one number and one uppercase and lowercase letter,
                      and at least 8 or more characters"
 						required></td>
-					<td>${errorMessagges.password }</td>
+					<td>${errorMessages.passwordError}</td>
 				</tr>
 
 				<tr>

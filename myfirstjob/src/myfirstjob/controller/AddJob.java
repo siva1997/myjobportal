@@ -16,10 +16,10 @@ import myfirstjob.service.HrService;
 
 @WebServlet("/addjob")
 public class AddJob extends HttpServlet {
-	
+	private static final long serialVersionUID = 1L;
    
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Job job=new Job();
 		HttpSession session=request.getSession();
 		HrUser hrUser=(HrUser) session.getAttribute("hrUser");
@@ -36,7 +36,7 @@ public class AddJob extends HttpServlet {
 		HrService service=new HrService();
 		boolean isAdded=service.addJob(job);
 		if(isAdded) {
-			request.getRequestDispatcher("jobsposted").forward(request, response);
+			response.sendRedirect("jobsposted");
 		}
 		else {
 			request.setAttribute("sqlError", "some internal error occured");

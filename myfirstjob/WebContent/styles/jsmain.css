@@ -1,0 +1,36 @@
+header{
+    display: flex;
+    background-color:lightseagreen;
+    border-style:solid;
+    border-color: orange;
+    padding-left: 2%;
+}
+#ororganisation{
+    flex-basis: 30%;
+}
+#links{
+	flex-basis:70%;
+	display: flex;
+	padding-left: 18%;
+	padding-top: 2%;
+}
+#links>a{
+	padding-left: 5%;
+}
+#links>a>button{
+	font-size:x-large;
+	font-family:fantasy;
+	background-color:lime;
+	height: 1cm;
+}
+
+
+
+.boxes{
+	height: 0.5cm
+}
+.lables{
+	font-size: x-large;
+	font-family: cursive;
+}
+

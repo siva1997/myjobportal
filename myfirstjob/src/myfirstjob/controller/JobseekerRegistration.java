@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import myfirstjob.dto.JobseekerUser;
 import myfirstjob.service.JobseekerService;
+import myfirstjob.util.MailUtility;
 import myfirstjob.util.Validation;
 
 
@@ -39,6 +40,8 @@ public class JobseekerRegistration extends HttpServlet {
 			JobseekerService jsService=new JobseekerService();
 			boolean isInserrted=jsService.saveJobseeker(jsUser);
 			if(isInserrted) {
+				MailUtility mailUtility=new MailUtility();
+				mailUtility.sendMail(request.getParameter("username"),request.getParameter("email"));
 				request.getRequestDispatcher("jobseekerlogin.jsp").forward(request, response);
 			}
 			else {

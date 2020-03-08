@@ -11,7 +11,7 @@
 <body>
      <br><br><br><br><br><br><br>
 	<div id="jobdetails">
-		<form action="addjob"  method="get">
+		<form action="addjob"  method="post">
 			<table style="background-color: aqua;" align="center"  >
 				<tr >
 					<td><label class="lables" >Designation</label></td>

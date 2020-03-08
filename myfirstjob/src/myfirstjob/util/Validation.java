@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import myfirstjob.dto.HrUser;
+import myfirstjob.dto.JobSeekerProfile;
 import myfirstjob.dto.JobseekerUser;
 
 public class Validation {
@@ -91,6 +92,50 @@ public class Validation {
 			errorMessages.put("passwordError", "enter password");
 		}
 		return errorMessages;
+	}
+	public Map<String,String> jsProfileValidate(JobSeekerProfile profile){
+		Map<String,String> errorMessages=new HashMap<String, String>();
+		if(profile.getHighestQualification().isEmpty()) {
+			errorMessages.put("qualificationError", "enter highest qualification");
+			
+		}
+		
+		if(profile.getUgPercentage().isNaN()) {
+			errorMessages.put("ugpercentageError", "enter ugpercentage");
+		}
+		else if(profile.getUgPercentage()>100) {
+			errorMessages.put("ugpercentageError", "enter correct percentage");
+		}
+		
+		if(profile.getPlusTwoPercentage().isNaN()) {
+			errorMessages.put("plustwopercentageError", "enter percentage ");
+		}
+		else if(profile.getPlusTwoPercentage()>100) {
+			errorMessages.put("plustwopercentageError", "enter correct percentage");
+		}
+		
+		
+		if(profile.getTenthPercentage().isNaN()) {
+			errorMessages.put("tenthpercentageError", "enter percentage");
+		}
+		else if(profile.getUgPercentage()>100) {
+			errorMessages.put("tenthpercentageError", "enter correct percentage");
+		}
+		
+		if(profile.getSkills().isEmpty()) {
+			errorMessages.put("skillsError", "enter Skills");
+		}
+		
+		if(profile.getLanguagesKnown().isEmpty()){
+			errorMessages.put("languagesError", "enter Known Languages");
+		}
+		
+		if(profile.getExperience().toString().isEmpty()) {
+			errorMessages.put("experienceError", "enter experience");
+		}
+		
+		return errorMessages;
+		
 	}
 
 }

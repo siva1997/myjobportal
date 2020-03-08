@@ -1,0 +1,26 @@
+#profile{
+	margin-bottom: 10%;
+	margin-top: 3%;
+	margin-left: 20%;
+	margin-right: 10%;
+	background-color: black;
+	width: 20cm;
+	padding-left: 3%;
+	border-style:solid;
+    border-color: orange;
+}
+#profile{
+	color: white;
+	font-family: monospace;
+	font-size: xx-large;
+}
+
+.row{
+	height: 2cm;
+	
+}
+#title{
+	padding-top: 1%;
+	padding-left: 40%;
+	color: orange;
+}

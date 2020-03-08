@@ -21,23 +21,23 @@
 				<tr>
 					<td><label>Organisation</label></td>
 					<td><input type="text" name="organisation" required></td>
-					<td>${errorMessagges.organisation }</td>
+					<td>${errorMessages.organisationError }</td>
 				</tr>
 				<tr>
 					<td><label>UserName</label></td>
 					<td><input type="text" name="username" required></td>
-					<td>${errorMessagges.userName }</td>
+					<td>${errorMessages.usernameError }</td>
 				</tr>
 				<tr>
 					<td><label>Email</label></td>
 					<td><input type="email" name="email" required></td>
-					<td>${errorMessagges.email }</td>
+					<td>${errorMessagges.emailError }</td>
 				</tr>
 				<tr>
 					<td><label>Mobile Number</label></td>
 					<td><input type="tel" name="mobile"
 						placeholder="ex-9999999999" pattern="[0-9]{10}" required></td>
-					<td>${errorMessagges.mobile }</td>
+					<td>${errorMessages.mobileError }</td>
 				</tr>
 				<tr>
 					<td><label>Password</label></td>
@@ -46,7 +46,7 @@
 						title="Must contain at least one number and one uppercase and lowercase letter,
                      and at least 8 or more characters"
 						required></td>
-					<td>${errorMessagges.password }</td>
+					<td>${errorMessages.passwordError }</td>
 				</tr>
 				<tr>
 					<td><label>Confirm Password</label></td>
@@ -55,7 +55,7 @@
 						title="Must contain at least one number and one uppercase and lowercase letter,
                      and at least 8 or more characters"
 						required></td>
-					<td>${errorMessagges.confirmPassword }</td>
+					<td>${errorMessages.passwordError }</td>
 				</tr>
 
 				<tr>

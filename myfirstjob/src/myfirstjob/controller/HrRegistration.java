@@ -2,6 +2,7 @@ package myfirstjob.controller;
 
 import java.io.IOException;
 
+
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import myfirstjob.dto.HrUser;
 import myfirstjob.service.HrService;
+import myfirstjob.util.MailUtility;
 import myfirstjob.util.Validation;
 
 
@@ -39,6 +41,8 @@ public class HrRegistration extends HttpServlet {
 			HrService hs=new HrService();
 			boolean isInserrted=hs.saveHr(hrUser);
 			if(isInserrted) {
+				MailUtility mailUtility=new MailUtility();
+				mailUtility.sendMail(request.getParameter("username"),request.getParameter("email"));
 				request.getRequestDispatcher("hrlogin.jsp").forward(request, response);
 			}
 			else {
