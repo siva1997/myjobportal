@@ -11,6 +11,8 @@ import javax.persistence.TypedQuery;
 
 import myfirstjob.dto.HrUser;
 import myfirstjob.dto.Job;
+import myfirstjob.dto.JobSeekerProfile;
+import myfirstjob.dto.JobseekerUser;
 
 public class HrService {
 	public boolean saveHr(HrUser hrUser) {
@@ -66,6 +68,29 @@ public class HrService {
 				entityTransaction.rollback();
 				return false;
 			}
+		
+	}
+	public List<JobseekerUser> appliedProfiles(int id){
+		EntityManagerFactory entityManagerFactory=Persistence.createEntityManagerFactory("jobportal");
+		EntityManager entityManager=entityManagerFactory.createEntityManager();
+		TypedQuery<JobseekerUser> jobsList=entityManager.createQuery("from JobseekerUser  where id  in (select jobSeekerId from ApplyDetails   where jobId=:id)",JobseekerUser.class);
+		jobsList.setParameter("id", id);
+		return jobsList.getResultList();	
+	}
+	
+	
+	public JobSeekerProfile getProfile(Integer jobseekerId) {
+		EntityManagerFactory entityManagerFactory=Persistence.createEntityManagerFactory("jobportal");
+		EntityManager entityManager=entityManagerFactory.createEntityManager();
+		TypedQuery<JobSeekerProfile> jsData=entityManager.createQuery("from JobSeekerProfile where JobseekerUser_id=:id ",JobSeekerProfile.class);
+		jsData.setParameter("id", jobseekerId);
+		try {
+		JobSeekerProfile profile=jsData.getSingleResult();
+		return profile;
+		}
+		catch(Exception e) {
+			return null;
+		}
 		
 	}
 }

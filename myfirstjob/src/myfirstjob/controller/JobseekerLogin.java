@@ -39,7 +39,8 @@ public class JobseekerLogin extends HttpServlet {
 				JobSeekerProfile profile=service.findProfile(jsUser.getId());
 				if(profile!=null) {
 				session.setAttribute("profile",profile);
-      			response.sendRedirect("displayjobs");
+				session.setAttribute("resumePath", "E:/jobportal/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/myfirstjob/resumes");
+      			response.sendRedirect("displayjobs?notapplied=1");
 				}
 				else {
 					response.sendRedirect("addprofile.jsp");

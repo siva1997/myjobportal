@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import myfirstjob.dto.ApplyDetails;
@@ -75,18 +76,39 @@ public class JobseekerService {
 		return profile;
 		}
 		catch(Exception e) {
+			e.printStackTrace();
 			return null;
 		}
 		
 	}
 
-	public List<Job> getJobList(){
+	public List<Job> getJobList(int id){
 		EntityManagerFactory entityManagerFactory=Persistence.createEntityManagerFactory("jobportal");
 		EntityManager entityManager=entityManagerFactory.createEntityManager();
-		TypedQuery<Job> jobsList=entityManager.createQuery("from Job",Job.class);
+		TypedQuery<Job> jobsList=entityManager.createQuery("from Job  where jobId not in (select jobId from ApplyDetails   where jobseekerid=:id)",Job.class);
+		jobsList.setParameter("id", id);
+		try {
 		return jobsList.getResultList();
+		}
+		catch(Exception e) {
+			return null;
+		}
 		
 	}
+	public List<Job> getAppliedJobList(int id){
+		EntityManagerFactory entityManagerFactory=Persistence.createEntityManagerFactory("jobportal");
+		EntityManager entityManager=entityManagerFactory.createEntityManager();
+		TypedQuery<Job> jobsList=entityManager.createQuery("from Job  where jobId  in (select jobId from ApplyDetails   where jobseekerid=:id)",Job.class);
+		jobsList.setParameter("id", id);
+		try {
+			return jobsList.getResultList();
+			}
+			catch(Exception e) {
+				return null;
+			}	
+	}
+	
+	
 	public boolean applyJob(ApplyDetails apply) {
 		EntityManagerFactory entityManagerFactory=Persistence.createEntityManagerFactory("jobportal");
 		EntityManager entityManager=entityManagerFactory.createEntityManager();
@@ -105,4 +127,21 @@ public class JobseekerService {
 		}
 	}
 
+	public boolean updateProfile(JobSeekerProfile profile) {
+		EntityManagerFactory entityManagerFactory=Persistence.createEntityManagerFactory("jobportal");
+		EntityManager entityManager=entityManagerFactory.createEntityManager();
+		EntityTransaction entityTransaction=entityManager.getTransaction();
+		try {
+		entityTransaction.begin();
+		entityManager.merge(profile);
+		entityTransaction.commit();
+		entityManager.close();
+		entityManagerFactory.close();
+		return true;
+		} catch(Exception e){
+			e.printStackTrace();
+			entityTransaction.rollback();
+			return false;
+		}
+	}
 }

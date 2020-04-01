@@ -15,11 +15,11 @@
 </div>
 	<div id=profile>
 		<form action="updateprofile" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="profileid" value="${param.profileId }">
+		
 			<table >
 				<tr class="row">
 					<td><label >Highest Qualification:</label></td>
-					<td ><input  class="inputs" type="text" name="qualification" required="required" value="${profile.highestQualification }"></td>
+					<td ><input  class="inputs" type="text" name="qualification" required="required" value="${profile.highestQualification}"></td>
 				</tr>
 				<tr class="row">
 					<td><label >UG Percentage:</label></td>
@@ -43,7 +43,7 @@
 				</tr>
 				<tr class="row">
 					<td><label >Experience:</label></td>
-					<td><input class="inputs" type="number" name="experience"  required="required"value="${profile.experience }"></td>
+					<td><input class="inputs" type="number" name="experience"  required="required" value="${profile.experience }"></td>
 				</tr>
 				<tr class="row">
 					<td><label >Upload Resume:</label></td>

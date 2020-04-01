@@ -69,8 +69,9 @@ public class AddJobseekerProfile extends HttpServlet {
 				fileOutputStream.write(resumeByteArray);
 				fileOutputStream.flush();
 				fileOutputStream.close();
-				request.getSession().setAttribute("profile", jobSeekerProfile);
-				response.sendRedirect("displayjobs");
+				JobSeekerProfile profile=service.findProfile(jsUser.getId());
+				request.getSession().setAttribute("profile", profile);
+				response.sendRedirect("displayjobs?notapplied=1");
 
 			}
 			else {

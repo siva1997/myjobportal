@@ -12,10 +12,10 @@
 			<h1>MyFirstJob.com</h1>
 		</div>
 		<div id="links">
-				<a href="updateprofile"><button>Update profile</button></a>
+				<a href="editprofile"><button>Update profile</button></a>
 				<a href="displayprofile"><button>view profile</button></a>
-				<a href=""><button>Applied jobs</button></a>
-				<a href="displayjobs"><button>view jobs</button></a>
+				<a href="displayjobs?notapplied=0"><button>Applied jobs</button></a>
+				<a href="displayjobs?notapplied=1"><button>view jobs</button></a>
 				<a href="jobseekerlogout"><button>Logout</button></a>
 			</div>
 	</header>

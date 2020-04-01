@@ -18,7 +18,7 @@ padding-top:5%;
   <%@include file="hrheader.jsp" %>
   
   <div id="jobslist">
-  <c:if test="${jobList!=null }">
+  <c:if test="${jobList.size()>0}">
   	<table border="1" bordercolor="blue" >
   		<tr>
   		<th>Designation</th>
@@ -28,6 +28,7 @@ padding-top:5%;
   		<th>Employment Type</th>
   		<th>salary</th>
   		<th>Location</th>
+  		<th>View Applied Profiles</th> 
   		</tr>
   		
   		<c:forEach var="jobList" items="${jobList }">
@@ -39,12 +40,13 @@ padding-top:5%;
   		    <td>${jobList.employmentType}</td>
   		    <td>${jobList.salary}</td>	
   		    <td>${jobList.location }</td>
+  		    <td><a href="appliedprofiles?jobid=${jobList.jobId}"><button>Profiles Applied</button> </a>
   		    </tr>        
   		</c:forEach>
   		
   	</table>
   	</c:if>
-  	<c:if test="${jobList==null }">
+  	<c:if test="${jobList.size()==0}">
   		<h1>no jobs to display</h1>
   	</c:if>
   	

@@ -43,7 +43,4 @@ public class ApplyDetails {
 		this.jobSeekerId = jobSeekerId;
 	}
 	
-	
-	
-
 }

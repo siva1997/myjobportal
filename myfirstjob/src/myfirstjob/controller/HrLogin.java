@@ -34,6 +34,7 @@ public class HrLogin extends HttpServlet {
 			HrUser hrUser=hrService.getHr(email,password);
 			if(hrUser!=null) {
 				HttpSession session=request.getSession();
+				session.setAttribute("resumePath", "E://jobportal/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/myfirstjob/resumes");
 				session.setAttribute("hrUser", hrUser);
 				response.sendRedirect("jobsposted");
 			}

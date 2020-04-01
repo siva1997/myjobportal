@@ -5,9 +5,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Job Seeker Profile</title>
-<link rel='stylesheet' type='text/css' media='screen' href='styles/jsmain.css'>
 <link rel='stylesheet' type='text/css' media='screen' href='styles/viewprofile.css'>
-<%@include file="jobseekerheader.jsp" %>
+
 </head>
 <body>
  <div id="title">
@@ -44,8 +43,8 @@
 					<td><label>:${profile.experience }</label></td>
 				</tr>
 				<tr class="row">
-					<td><label >Resume</label></td>
-					<td><a href="${resumePath}"><button>Download</button></a> </td>
+					<td><label >Download Resume</label></td>
+					<td><label>:Download</label></td>
 				</tr>
 				<tr class="row">
 				<td> </td>
